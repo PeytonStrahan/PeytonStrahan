@@ -14,10 +14,12 @@
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 25px;  /* <--- Change me! */
+			background-image: url("https://media.tenor.com/gQV5VzHLWQIAAAAM/among-us-sus.gif");
 		}
 		.board{
 			height: 100vh;
+			background-image: url("https://media1.giphy.com/media/toYIS95xETUPLmU9WP/200w.gif?cid=82a1493b5k23rr2w31yp4co6p9sichwh99ej41qjuc9ctle9&rid=200w.gif&ct=g");
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -39,6 +41,7 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			var boardHeight = board.height();
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
@@ -47,8 +50,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css('top', newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -61,16 +65,35 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
 
-			
+			var positionX = Math.random() * boardWidth;
+			var points = 0;
+			var speed = 10;
+			var positionY = Math.random() * boardHeight;
+			var speedY = 10;
+
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
 			function update() {
-				
+				/* Your Code to Increase positionX by 10 HERE*/
+				positionX += speed;
+				positionY += speedY;
+				moveBoxTo(positionX, positionY);
+				if (positionX > boardWidth) {
+					speed *= -1;
+				}
+				if (positionX < 0) {
+					speed *= -1;
+				}
+				if (positionY > boardHeight) {
+					speedY *= -1;
+				}
+				if (positionY < 0) {
+					speedY *= -1;
+				}
 
 			};
 
@@ -80,8 +103,22 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
+				positionX = Math.random() * boardWidth;
+				positionY = Math.random() * boardHeight;
+				points = points + 1;
+				changeBoxText(points);
+				if (speed >= 0) {
+					speed += 3;
+				}
+				else if (speed < 0) {
+					speed -= 3;
+				}
+				if (speedY >= 0) {
+					speedY += 3;
+				}
+				else if (speedY < 0) {
+					speedY -= 3;
+				}
 
 			};
 		})();
