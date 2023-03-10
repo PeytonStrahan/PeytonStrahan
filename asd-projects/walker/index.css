@@ -9,14 +9,29 @@ body {
   border: 1px solid white;
   background-color: black;
   position: relative;
+  background-image: url("https://img.freepik.com/premium-photo/brown-earth-texture-background_469558-29103.jpg?w=2000");
 }
 
 #walker {
-  background-color: teal;
+  background-color: cyan;
   width: 50px;
   height: 50px;
   position: absolute;
   border-radius: 440px;
-/*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
-/*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+  font-size: 200%;
+	text-align: center;
+  /* left: 100px; */ /* Uncomment if you want to set a "starting" position */
+  /* top: 100px; */ /* Uncomment if you want to set a "starting" position */
+}
+
+#walker2 {
+  background-color: greenyellow;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 440px;
+  font-size: 200%;
+	text-align: center;
+  /* left: 340px; */ /* Uncomment if you want to set a "starting" position */
+  /* top: 340px; */ /* Uncomment if you want to set a "starting" position */
 }

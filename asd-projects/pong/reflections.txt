@@ -1,0 +1,99 @@
+User Story / Gameplay
+    Describe the gameplay
+        Two paddles are bouncing a ball back and forth.
+    What are the conditions when the game begins?
+        The game begins when one player moves their paddle.
+            ~could make the game start when both players hold right or left or some other key~
+    Does the game have an end? If so, what are the conditions for when it ends?
+        When one player gets to 11 points.
+            ~could add a tiebreaker mechanic or just a tied winstate~
+    What ifs will there be?
+        If the ball crosses over the board edge, then the opposite player earns a point.
+
+        If the ball hits a paddle, reverse the direction of the ball.
+            ~position of impact could affect how the ball is bounced back~
+
+        If the ball hits the bottom or top of the board, reverse its direction.
+
+        If player hits up or down arrow key, move the paddle in that right direction
+
+        If a player scores 11, end the game and show the winner's name.
+
+        If the ball hits one of the paddles, increase ball speed.
+
+        If the paddle hits top or bottom edge of the board, stop the paddle.
+
+        If the ball hits board edge, return the ball to the middle of the board and reset speed to starting speed.
+
+
+
+
+
+
+
+Visual Game Components:
+    What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+        board with a center line
+
+        two paddles
+
+        ball
+            ~may be able to add a mode that has multiple balls on screen at once~
+
+    Which will be static? (the board)
+
+        The line
+        The board
+            ~may decorate static and nonstatic onbjects with textures, pictures, or gifs~
+
+    Which will be animated? (the box)
+
+        The ball and the paddles
+
+    What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
+
+        PositionX, positiony, speed x, speed y.
+
+
+
+
+
+
+
+
+
+Events / Logic
+    What events will occur in this game? (timer events, keyboard events, clicking events?)
+
+    keydown
+    keyup
+    ball touching the paddle.
+
+    How do those events affect the data of the program?
+
+        moves the paddle
+
+        One player will use up, down keys and the other will use w and s
+
+    For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+
+        $(document).on("keydown", handleKeyDown)
+        handleKeyDown(event){
+            (enent.which === key.up){
+                move paddle up
+                increase position y
+                    maybe we will decrease the "top" css position
+            }
+
+            (event.which === key.down){
+                move paddle down
+                adjust position y
+            }
+
+            when the balle hits the paddle{
+                change the direction of the ball
+                increase speed of the ball.
+                    ~might have the movement of the paddles and exact position of where the ball hits the paddle affect how the ball is bounced back~
+            }
+        }
+        
