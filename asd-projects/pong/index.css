@@ -4,18 +4,74 @@ body {
 }
 
 #board {
-  width: 440px;
-  height: 440px;
+  width: 640px;
+  height: 340px;
   border: 1px solid white;
   background-color: black;
   position: relative;
 }
 
-#gameItem {
+#leftPaddle {
+  /* appearance */
   background-color: teal;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 80px;
+  border-radius: 20px;
+
+  /* positioning */
   position: absolute;
-/*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
-/*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+  left: 20px;  /* Uncomment if you want to set a "starting" position */
+  top: 130px;  /* Uncomment if you want to set a "starting" position */
+}
+
+#rightPaddle {
+  /* appearance */
+  background-color: red;
+  width: 20px;
+  height: 80px;
+  border-radius: 20px;
+  
+  /* positioning */
+  position: absolute;
+  top: 130px;
+  left: 600px;
+}
+
+#ball {
+  /* appearance */
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  
+  /* positioning */
+  position: absolute;
+  top: 160px;
+  left: 310px;
+}
+
+#player1Score {
+  /* appearance */
+  background-color: gray;
+  width: 160px;
+  height: 80px;
+  border-radius: 0px;
+  
+  /* positioning */
+  position: absolute;
+  top: 360px;
+  left: 140px;
+}
+
+#player2Score {
+  /* appearance */
+  background-color: gray;
+  width: 160px;
+  height: 80px;
+  border-radius: 0px;
+  
+  /* positioning */
+  position: absolute;
+  top: 360px;
+  left: 340px;
 }
